@@ -1,0 +1,274 @@
+<wicket:extend>
+
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_title">
+				<h1>
+					<span wicket:id="boxname">[boxname]</span> Box
+				</h1>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="x_panel tile">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+
+						<div class="x_title">
+
+							<h2>Box Info</h2>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="x_content"></div>
+
+						<table id=boxtable class="table table-striped table-bordered"
+							cellspacing="0" width="100%">
+							<thead>
+								<tr class="headings">
+
+									<th>Item</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+
+
+							<tbody>
+								<tr wicket:id="boxrepeating">
+
+									<td><span wicket:id="boxitem">[boxitem]</span></td>
+									<td><span wicket:id="boxvalue">[boxvalue]</span></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+				</div>
+
+				<div class="clearfix"></div>
+
+			<div class="x_panel tile">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+
+						<div class="x_title">
+
+							<h2>Peers Info</h2>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="x_content"></div>
+
+						<table id=peerstable class="table table-striped table-bordered"
+							cellspacing="0" width="100%">
+							<thead>
+								<tr class="headings">
+
+									<th>LOCKSS ID</th>
+									<th>Polls Called</th>
+									<th>Polls Rejected</th>
+									<th>Last vote</th>
+									<th>Last invitation</th>
+									<th>Last poll</th>
+									<th>Invitation Count</th>
+									<th>Message Count</th>
+									
+								</tr>
+							</thead>
+
+
+							<tbody>
+								<tr wicket:id="peersrepeating">
+
+									<td><span wicket:id="peerslockssid">[peerslockssid]</span></td>
+									<td><span wicket:id="peerspollscalled">[peerspollscalled]</span></td>
+									<td><span wicket:id="peerspollsrejected">[peerspollsrejected]</span></td>
+									<td><span wicket:id="peerslastvote">[peerslastvote]</span></td>
+									<td><span wicket:id="peerslastinvitation">[peerslastinvitation]</span></td>
+									<td><span wicket:id="peerslastpoll">[peerslastpoll]</span></td>
+									<td><span wicket:id="peerslastmsg">[peerslastmsg]</span></td>
+									<td><span wicket:id="peersmsgtype">[peersmsgtype]</span></td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+	
+			<div class="x_panel tile">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+
+						<div class="x_title">
+
+							<h2>Archival Units</h2>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="x_content"></div>
+
+
+						<table id=AUtable class="table table-striped table-bordered"
+							cellspacing="0" width="100%">
+							<thead>
+								<tr class="headings">
+
+									<th>AU Name</th>
+									<th>Content size</th>
+									<th>Last Poll Result</th>
+									<th>Disk Usage</th>
+									<th>Recent Poll</th>
+									<th>Updated at</th>
+								</tr>
+							</thead>
+
+
+							<tbody>
+								<tr wicket:id="AUrepeating">
+									<td><a> <span class="" wicket:id="AUName" />
+									</a></td>
+									<td><span wicket:id="AUContentSize">[AUContentSize]</span></td>
+									<td><span wicket:id="AULastPollResult">[AULastPollResult]</span></td>
+									<td><span wicket:id="AUDiskUsage">[AUDiskUsage]</span></td>
+									<td><span wicket:id="AURecentPoll">[AURecentPoll]</span></td>
+									<td><span wicket:id="AUUpdatedAt">[AUUpdatedAt]</span></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	<!-- Datatables -->
+	<script>
+		$(document).ready(function() {
+			var handleDataTableButtons = function() {
+				if ($("#boxtable").length) {
+					$("#boxtable").dataTable({
+						dom : "Bfrtip",
+						buttons : [ {
+							extend : "copy",
+							className : "btn-sm"
+						}, {
+							extend : "csv",
+							className : "btn-sm"
+						}, {
+							extend : "excel",
+							className : "btn-sm"
+						}, {
+							extend : "pdfHtml5",
+							className : "btn-sm"
+						}, {
+							extend : "print",
+							className : "btn-sm"
+						}, ],
+						responsive : true
+					});
+				}
+			};
+
+			TableManageButtons = function() {
+				"use strict";
+				return {
+					init : function() {
+						handleDataTableButtons();
+					}
+				};
+			}();
+
+			TableManageButtons.init();
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			var handleDataTableButtons = function() {
+				if ($("#peerstable").length) {
+					$("#peerstable").dataTable({
+						dom : "Bfrtip",
+						buttons : [ {
+							extend : "copy",
+							className : "btn-sm"
+						}, {
+							extend : "csv",
+							className : "btn-sm"
+						}, {
+							extend : "excel",
+							className : "btn-sm"
+						}, {
+							extend : "pdfHtml5",
+							className : "btn-sm"
+						}, {
+							extend : "print",
+							className : "btn-sm"
+						}, ],
+						responsive : true
+					});
+				}
+			};
+
+			TableManageButtons = function() {
+				"use strict";
+				return {
+					init : function() {
+						handleDataTableButtons();
+					}
+				};
+			}();
+
+			TableManageButtons.init();
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			var handleDataTableButtons = function() {
+				if ($("#AUtable").length) {
+					$("#AUtable").dataTable({
+						dom : "Bfrtip",
+						buttons : [ {
+							extend : "copy",
+							className : "btn-sm"
+						}, {
+							extend : "csv",
+							className : "btn-sm"
+						}, {
+							extend : "excel",
+							className : "btn-sm"
+						}, {
+							extend : "pdfHtml5",
+							className : "btn-sm"
+						}, {
+							extend : "print",
+							className : "btn-sm"
+						}, ],
+						responsive : true
+					});
+				}
+			};
+
+			TableManageButtons = function() {
+				"use strict";
+				return {
+					init : function() {
+						handleDataTableButtons();
+					}
+				};
+			}();
+
+			TableManageButtons.init();
+		});
+	</script>
+
+</wicket:extend>
+

@@ -1,0 +1,36 @@
+<wicket:extend>
+
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<div class="x_panel tile">
+				<div class="x_title">
+
+					<h2>SAFE PLN Members</h2>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row">
+				<table >
+					<thead>
+						<tr>
+<!-- 					<th><div "col-md-12 col-sm-12 col-xs-12"> <h1> Institution</h1></div> </th>
+							<th><div "col-md-12 col-sm-12 col-xs-12"> <h1>Org Admin</h1></div></th>
+							<th><div "col-md-12 col-sm-12 col-xs-12"> <h1>Tech Admin</h1></div></th>
+-->		
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="MembersRepeating">
+							<td style="width: 40%; text-align='center';"> <h2><span wicket:id="InstitutionRepeating"></span></h2></td>
+							<td style="width: 30%;"><span wicket:id="OrgMembersRepeating"></span></td>
+							<td style="width: 30%;"><span wicket:id="TechMembersRepeating"></span></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</wicket:extend>

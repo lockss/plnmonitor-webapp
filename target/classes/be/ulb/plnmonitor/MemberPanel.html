@@ -1,0 +1,45 @@
+<wicket:panel>
+	<div class="col-md-12 col-sm-12 col-xs-12 profile_details">
+		<div class="well profile_view">
+			<div class="col-sm-12">
+				<h4 class="brief">
+					<i><span wicket:id="MemberType"></span></i>
+				</h4>
+				<div class="left col-xs-7">
+					<h2>
+						<span wicket:id="MemberName"></span>
+					</h2>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-building"></i> Address: <span
+							wicket:id="MemberInstitution"></span></li>
+						<li><i class="fa fa-phone"></i> Phone : <span
+							wicket:id="MemberPhone"></span></li>
+						<li><i class="fa fa-email"></i> Email : <span
+							wicket:id="MemberEmail"></span></li>
+					</ul>
+				</div>
+				<div class="right col-xs-5 text-center">
+					<img src="images/img.jpg" alt="" class="img-circle img-responsive">
+				</div>
+			</div>
+			<div class="col-xs-12 bottom text-center">
+
+				<div class="col-xs-12 col-sm-12 emphasis">
+					<div class="form-group">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<button type="button" wicket:id="MemberEmailTo"
+								class="btn btn-primary btn-xs">
+								<i class="fa fa-user"> </i> <span> Send Mail </span>
+							</button>
+							<button type="button" disabled class="btn btn-success btn-xs">
+								<i class="fa fa-pencil"> </i> <span> Edit </span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</wicket:panel>

@@ -1,0 +1,117 @@
+<wicket:extend>
+
+	<div class="x_title">
+
+		<h2>
+			Detailed Status <small>SAFE PLN Network</small>
+		</h2>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="x_content">
+	
+	</div>
+	<table id="datatable-status" class="table table-striped table-bordered" cellspacing="0" width="100%">
+   <!-- <table id=example class="table table-striped responsive-utilities jambo_table datatable"> -->
+                                        <thead>
+                                            <tr class="headings">
+                                                 <th>
+                                                    <input type="checkbox" class="tableflat">
+                                                </th>                                              
+                                                <th>Box Id </th>
+                                                <th>IP address</th>
+                                                <th>UI Port</th>
+                                                <th>Country</th>
+                                                <th>Active AUs</th>
+                                                <th>Tech Admin</th>
+                                                <th>Org Admin</th>
+                                                
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr wicket:id="repeating">
+                                             <td class="a-center ">
+                                                    <input type="checkbox" class="tableflat">
+                                                </td>
+										        <td><span wicket:id="boxId">[boxId]</span></td>
+  										        <td><span wicket:id="ipAddress">[ipAddress]</span></td>
+  										        <td><span wicket:id="uiport">[uiport]</span></td>
+  										        <td><span wicket:id="country">[country]</span> </td>
+  										        <td><span wicket:id="activeAUs">[activeAUs]</span> </td>
+  										        <td><span wicket:id="techAdmin">[techAdmin]</span> </td>
+  										        <td><span wicket:id="orgAdmin">[orgAdmin]</span> </td>
+  										        
+   											 </tr>
+                                        </tbody>
+                                    </table>
+                                    
+    
+
+    <!-- Datatables -->
+    <script>
+      $(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-status").length) {
+            $("#datatable-status").dataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "copy",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "excel",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "pdfHtml5",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "print",
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+ 
+        TableManageButtons.init();
+      });
+    </script>
+
+</wicket:extend>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
