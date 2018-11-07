@@ -1,0 +1,257 @@
+<wicket:panel>
+			<h1> Data from box <span wicket:id="tablename"> Box Name </span></h1>
+
+
+	
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h2>General Info</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+					<table class="table table-borderless ">
+
+						<tr>
+							<td><b>Name</b></td>
+							<td><span wicket:id="auFullName">[auFullName]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Content Size </b></td>
+							<td><span wicket:id="auContentSize">[auContentSize]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Disk Usage </b></td>
+							<td><span wicket:id="auDiskUsage">[auDiskUsage]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Created At </b></td>
+							<td><span wicket:id="auCreationTime">[auCreationTime]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Publisher </b></td>
+							<td><span wicket:id="auPublisher">[auPublisher]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Year </b></td>
+							<td><span wicket:id="auYear">[auYear]</span></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h2>Poll Info</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+					<table class="table table-borderless">
+						<tr>
+							<td><b>Recent Poll Agreement </b></td>
+							<td><span wicket:id="auRecentPollAgreement">[auRecentPollAgreement]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Last Poll Result </b></td>
+							<td><span wicket:id="auLastPollResult">[auLastPollResult]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Last Completed Poll </b></td>
+							<td><span wicket:id="auLastCompletedPoll">[auLastCompletedPoll]</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h2>Crawl Info</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+					<table class="table table-borderless">
+						<tr>
+							<td><b>Last Crawl </b></td>
+							<td><span wicket:id="auLastCrawl">[auLastCrawl]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Last Crawl Result </b></td>
+							<td><span wicket:id="auLastCrawlResult">[auLastCrawlResult]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Last Completed Crawl </b></td>
+							<td><span wicket:id="auLastCompletedCrawl">[auLastCompletedCrawl]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Crawl Pool </b></td>
+							<td><span wicket:id="auCrawlPool">[auCrawlPool]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Crawl Proxy </b></td>
+							<td><span wicket:id="auCrawlProxy">[auCrawlProxy]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Crawl Window </b></td>
+							<td><span wicket:id="auCrawlWindow">[auCrawlWindow]</span></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h2>LOCKSS Info</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+
+					<table class="table table-borderless">
+						<tr>
+							<td><b>Plugin Name </b></td>
+							<td><span wicket:id="auPluginName">[auPluginName]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>LOCKSS identifier </b></td>
+							<td><span wicket:id="auLOCKSSID">[auLOCKSSID]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Repository Path </b></td>
+							<td><span wicket:id="auRepositoryPath">[auRepositoryPath]</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h2>Status</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="x_content">
+					<table class="table table-borderless">
+						<tr>
+							<td><b>Data collected from Box at </b></td>
+							<td><span wicket:id="auInfoUpdated">[auInfoUpdated]</span></td>
+						</tr>
+
+						<tr>
+							<td><b>Data first collected from Box at </b></td>
+							<td><span wicket:id="auInfoCreated">[auInfoCreated]</span></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	
+	<!-- <script>
+		$(document).ready(function() {
+			var opts = {
+				lines : 12, // The number of lines to draw
+				angle : 0, // The length of each line
+				lineWidth : 0.4, // The line thickness
+				pointer : {
+					length : 0.75, // The radius of the inner circle
+					strokeWidth : 0.042, // The rotation offset
+					color : '#1D212A' // Fill color
+				},
+				limitMax : 'true', // If true, the pointer will not go past the end of the gauge
+				colorStart : gauge_color, // Colors
+				colorStop : gauge_color, // just experiment with them
+				strokeColor : '#F0F3F3', // to see which ones work best for you
+				generateGradient : true
+			};
+			var target = document.getElementById('chart_gauge_01'); // your canvas element
+			var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+			gauge.maxValue = 100; // set max gauge value
+			gauge.animationSpeed = 16; // set animation speed (32 is default value)
+			gauge.set(gauge_value); // set actual value
+			gauge.setTextField(document.getElementById("gauge-text"));
+		});
+	</script>
+
+	<script wicket:id="gauge_settings" /> -->
+	
+
+</wicket:panel>
+

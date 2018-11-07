@@ -1,0 +1,145 @@
+<wicket:extend>
+
+
+	<meta charset="utf-8">
+	<style>
+.land {
+	fill: #555;
+	stroke-opacity: 1;
+}
+
+.graticule {
+	fill: none;
+	stroke: black;
+	stroke-width: .5;
+	opacity: .2;
+}
+
+.labels {
+	font: 14px sans-serif;
+	fill: black;
+	opacity: .5;
+}
+
+.noclicks {
+	pointer-events: none;
+}
+
+.point {
+	opacity: .6;
+}
+
+.arcs {
+	opacity: .1;
+	stroke: gray;
+	stroke-width: 3;
+}
+
+.flyers {
+	stroke-width: 1;
+	opacity: .6;
+	stroke: green;
+}
+
+.arc, .flyer {
+	stroke-linejoin: round;
+	fill: none;
+}
+
+@
+keyframes blinking_flyer {to { visibility:hidden;
+	
+}
+
+}
+.arc {
+	
+}
+
+.flyer {
+	stroke: green;
+}
+
+.flyer_dead {
+	animation: blinking_flyer 1s steps(5, start) infinite;
+	-webkit-animation: blinking_flyer 1s steps(5, start) infinite;
+	stroke: red;
+	stroke-width: 2;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+.flyer:hover {
+	stroke: black;
+}
+
+.d3-tip {
+	line-height: 1;
+	font-weight: bold;
+	padding: 12px;
+	background: #fffAF0;
+	color: #fff;
+	border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.2);
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+</style>
+
+	<span wicket:id="summaryPanel"></span>
+
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="dashboard_graph">
+
+				<div class="row x_title">
+
+					<h2>
+						Network Status: <button type="button" class="btn btn-round btn-danger">Danger</button>
+						 
+					   <!-- <button type="button" class="btn btn-round btn-success">Success</button>
+                    	<button type="button" class="btn btn-round btn-info">Info</button>
+                    	<button type="button" class="btn btn-round btn-warning">Warning</button>
+                    	<button type="button" class="btn btn-round btn-danger">Danger</button>  -->
+					</h2>
+					   
+				</div>
+
+				 <div id="safeplnmap"></div> 
+			</div>
+		</div>
+	</div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://d3js.org/queue.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v0.min.js"></script>
+	<script
+		src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+	<script wicket:id="script" />
+	
+	<script>
+		window.onload = drawmap();
+	</script>
+
+
+</wicket:extend>
+

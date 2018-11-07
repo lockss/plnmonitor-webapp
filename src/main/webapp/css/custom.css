@@ -265,6 +265,9 @@ body .container.body .right_col {
 .dark {
   color: #34495E;
 }
+.orange {
+  color: #FFA500;
+}
 .border-blue {
   border-color: #3498DB !important;
 }

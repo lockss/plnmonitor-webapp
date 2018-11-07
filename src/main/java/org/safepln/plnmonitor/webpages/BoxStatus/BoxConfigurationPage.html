@@ -1,0 +1,109 @@
+
+<wicket:extend>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_title">
+				<h1>LOCKSS Boxes Configuration</h1>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="x_panel tile">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+
+					<div class="x_title">
+
+						<h2>Box Info</h2>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content"></div>
+
+
+
+
+
+					<table id="datatable-boxconfig"
+						class="table table-striped table-bordered" cellspacing="0"
+						width="100%">
+						<!-- <table id=example class="table table-striped responsive-utilities jambo_table datatable"> -->
+						<thead>
+							<tr class="headings">
+								<th>Box Id</th>
+								<th>IP address</th>
+								<th>UI Port</th>
+								<th>Country</th>
+								<th>Active AUs</th>
+								<th>Tech Admin</th>
+								<th>Org Admin</th>
+								<th></th>
+
+							</tr>
+						</thead>
+
+
+						<tbody>
+							<tr wicket:id="repeating">
+								<td><span wicket:id="boxId">[boxId]</span></td>
+								<td><span wicket:id="ipAddress">[ipAddress]</span></td>
+								<td><span wicket:id="uiport">[uiport]</span></td>
+								<td><span wicket:id="country">[country]</span></td>
+								<td><span wicket:id="activeAUs">[activeAUs]</span></td>
+								<td><span wicket:id="techAdmin">[techAdmin]</span></td>
+								<td><span wicket:id="orgAdmin">[orgAdmin]</span></td>
+								<td>
+									<button type="button"  class="btn btn-info btn-xs">
+									<i class="fa fa-pencil"></i> <span wicket:id="editBox">Edit</span>
+									</button>
+								</td>		
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Datatables -->
+	<script>
+		$(document).ready(function() {
+			var handleDataTableButtons = function() {
+				if ($("#datatable-boxconfig-status").length) {
+					$("#datatable-status").dataTable({
+						dom : "Bfrtip",
+						buttons : [ {
+							extend : "copy",
+							className : "btn-sm"
+						}, {
+							extend : "csv",
+							className : "btn-sm"
+						}, {
+							extend : "excel",
+							className : "btn-sm"
+						}, {
+							extend : "pdfHtml5",
+							className : "btn-sm"
+						}, {
+							extend : "print",
+							className : "btn-sm"
+						}, ],
+						responsive : true
+					});
+				}
+			};
+
+			TableManageButtons = function() {
+				"use strict";
+				return {
+					init : function() {
+						handleDataTableButtons();
+					}
+				};
+			}();
+
+			TableManageButtons.init();
+		});
+	</script>
+
+</wicket:extend>

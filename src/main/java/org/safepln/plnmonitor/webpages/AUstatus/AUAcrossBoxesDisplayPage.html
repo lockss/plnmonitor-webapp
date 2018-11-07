@@ -1,0 +1,100 @@
+<wicket:extend>
+
+	<div class="x_title">
+
+		<h1>
+			<span wicket:id="auName">[auName]</span> in SAFE PLN
+		</h1>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+
+				<div class="x_content">
+				<div class="col-md-5 col-sm-5 col-xs-12 "> 
+					<div class="x_panel tile ">
+	
+					<div class="x_title">
+						<h2>Recent Poll Agreement</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+							</li>
+
+							<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+						<div class="x_content">
+						<div class="widget_summary" wicket:id="repeatingAgreement">
+							<div class="w_left w_25">
+								<span wicket:id="Agreementbox"></span>
+							</div>
+							<div class="w_center w_55">
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+										wicket:id="repeatingAgreementWidth">
+										<span></span>
+									</div>
+									<span class="sr-only" wicket:id="repeatingAgreementValue"></span>
+								</div>
+							</div>
+							<div class="w_right w_25">
+								<span wicket:id="agreementPercentageValue"></span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+					</div>
+			
+					</div>
+				</div>
+				
+				<div class="col-md-5 col-sm-5 col-xs-12 "> 
+					<div class="x_panel tile ">
+						<div class="x_title">
+						<h2>AU Size</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+							</li>
+
+							<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+						</div>
+					 
+						<div class="x_content">
+						<div class="widget_summary" wicket:id="repeatingAUSizes">
+							<div class="w_left w_25">
+								<span wicket:id="AUsizebox"></span>
+							</div>
+							
+							<div class="w_right w_25">
+								<span wicket:id="repeatingAUsize">[repeatingAUSize]</span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+					</div>
+					</div>
+					
+				</div>	
+				</div>
+			</div>
+		</div>
+	
+	<div class="row">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+
+			<span wicket:id="auAcrossBoxesDisplayTablePanel"></span>
+
+			
+		</div>
+	</div>
+
+</wicket:extend>
+
