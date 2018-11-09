@@ -1,0 +1,5 @@
+doc/* linguist-documentation
+doc linguist-detectable=false
+src/main/java linguist-detectable=true
+src/test/java linguist-detectable=true
+src/test/resources linguist-detectable=false
