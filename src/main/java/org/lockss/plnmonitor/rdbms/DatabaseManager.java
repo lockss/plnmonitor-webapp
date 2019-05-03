@@ -621,7 +621,7 @@ public class DatabaseManager
 
         sql.append(" where ").append(pk.getName()).append(" = ?");
 
-        List columns = new ArrayList();
+        List<ColumnInfo> columns = new ArrayList<ColumnInfo>();
         columns.addAll(Arrays.asList(info));
         columns.add(pk);
 
@@ -732,9 +732,9 @@ public class DatabaseManager
      * @exception SQLException
      *                If a database error occurs
      */
-    protected static List getColumnNames(String table) throws SQLException
+    protected static List<String> getColumnNames(String table) throws SQLException
     {
-        List results = new ArrayList();
+        List<String> results = new ArrayList<String>();
         ColumnInfo[] info = getColumnInfo(table);
 
         for (int i = 0; i < info.length; i++)
@@ -755,10 +755,10 @@ public class DatabaseManager
      * @exception SQLException
      *                If a database error occurs
      */
-    protected static List getColumnNames(ResultSetMetaData meta)
+    protected static List<String> getColumnNames(ResultSetMetaData meta)
             throws SQLException
     {
-        List results = new ArrayList();
+        List<String> results = new ArrayList<String>();
         int columns = meta.getColumnCount();
 
         for (int i = 0; i < columns; i++)
