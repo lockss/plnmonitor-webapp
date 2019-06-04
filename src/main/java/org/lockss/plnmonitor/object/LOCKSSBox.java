@@ -39,6 +39,14 @@ public class LOCKSSBox implements Serializable, IClusterable {
 	private List<LOCKSSBoxData> lockssBoxData;
 	
 	private String adminEmail;
+	
+	private List<Peer> peers;
+	private List<AU> AUs;
+	
+	private long techAdmin;
+	private long orgAdmin;
+	
+	
 	public String getAdminEmail() {
 		return adminEmail;
 	}
@@ -129,12 +137,7 @@ public class LOCKSSBox implements Serializable, IClusterable {
 		this.orgAdmin = orgAdmin;
 	}
 
-	private List<Peer> peers;
-	private List<AU> AUs;
-	
-	private long techAdmin;
-	private long orgAdmin;
-	
+
 	public LOCKSSBox(){
 	}
 	

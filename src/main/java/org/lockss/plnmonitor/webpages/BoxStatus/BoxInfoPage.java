@@ -84,41 +84,65 @@ public class BoxInfoPage extends BasePage {
             
            final long orgAdminId = box.getOrgAdmin();
         	
-	       Link<String> orgManlink = new Link<String>("boxvalue") {
-                /**
-				 * 
-				 */
-				private static final long serialVersionUID = 1L;
+           if (orgAdminId != -1) { // database value was not null
+    	       Link<String> orgManlink = new Link<String>("boxvalue") {
 
-				@Override
-                public void onClick() {
-					setResponsePage(new PersonDisplayPage(parameters, plnDataController, orgAdminId ));
-                }
-            };
-            orgManlink.setBody(Model.of(orgAdmin.getFirstName() + " " +orgAdmin.getName()));
-            orgManlink.add(new AttributeAppender("style", "cursor: pointer;"));
-        	item.add(orgManlink);
+    				private static final long serialVersionUID = 1L;
+
+    				@Override
+                    public void onClick() {
+    					setResponsePage(new PersonDisplayPage(parameters, plnDataController, orgAdminId ));
+                    }
+                };
+                orgManlink.setBody(Model.of(orgAdmin.getFirstName() + " " +orgAdmin.getName()));
+                orgManlink.add(new AttributeAppender("style", "cursor: pointer;"));
+            	item.add(orgManlink);
+   			}
+   			else {
+   				Link<String> orgManlink = new Link<String>("boxvalue") {
+   					private static final long serialVersionUID = 1L;
+   					@Override
+   					public void onClick() {
+   					}
+   				};
+   				orgManlink.setBody(Model.of( "Not defined"));
+   				item.add(orgManlink);
+   			}
+
+   		
         	
             item = new AbstractItem(boxrepeating.newChildId());
 	        boxrepeating.add(item); 
 	        item.add(new Label("boxitem", "Tech Manager"));
 	        
         	final long techAdminId = box.getTechAdmin();
-        	
- 	       Link<String> techManlink = new Link<String>("boxvalue") {
-                 /**
- 				 * 
- 				 */
- 				private static final long serialVersionUID = 1L;
+ 
+            if (techAdminId != -1) { // database value was not null
+     	       Link<String> techManlink = new Link<String>("boxvalue") {
 
- 				@Override
-                 public void onClick() {
- 					setResponsePage(new PersonDisplayPage(parameters, plnDataController, techAdminId ));
-                 }
-             };
-             techManlink.setBody(Model.of(techAdmin.getFirstName() + " " +techAdmin.getName()));
-             techManlink.add(new AttributeAppender("style", "cursor: pointer;"));
-         	item.add(techManlink);
+     				private static final long serialVersionUID = 1L;
+
+     				@Override
+                     public void onClick() {
+     					setResponsePage(new PersonDisplayPage(parameters, plnDataController, techAdminId ));
+                     }
+                 };
+                 techManlink.setBody(Model.of(techAdmin.getFirstName() + " " +techAdmin.getName()));
+                 techManlink.add(new AttributeAppender("style", "cursor: pointer;"));
+             	item.add(techManlink);
+    			}
+    			else {
+    				Link<String> orgManlink = new Link<String>("boxvalue") {
+    					private static final long serialVersionUID = 1L;
+    					@Override
+    					public void onClick() {
+    					}
+    				};
+    				orgManlink.setBody(Model.of( "Not defined"));
+    				item.add(orgManlink);
+    			}
+
+            
          	
 //	        item = new AbstractItem(boxrepeating.newChildId());
 //	        boxrepeating.add(item);

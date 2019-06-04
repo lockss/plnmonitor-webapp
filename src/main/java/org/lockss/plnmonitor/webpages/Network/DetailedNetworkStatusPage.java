@@ -205,6 +205,8 @@ public class DetailedNetworkStatusPage extends BasePage implements IHeaderContri
 			item.add(new Label("daemonVersion", daemonVersion));
 			
 			final long orgAdminId = box.getOrgAdmin();
+			
+			if (orgAdminId != -1) { // database value was not null
 			Link<String> orgManlink = new Link<String>("orgAdmin") {
 				private static final long serialVersionUID = 1L;
 
@@ -216,9 +218,21 @@ public class DetailedNetworkStatusPage extends BasePage implements IHeaderContri
 			orgManlink.setBody(Model.of(orgAdmin.getFirstName() + " " + orgAdmin.getName()));
 			orgManlink.add(new AttributeAppender("style", "cursor: pointer;"));
 			item.add(orgManlink);
+			}
+			else {
+				Link<String> orgManlink = new Link<String>("orgAdmin") {
+					private static final long serialVersionUID = 1L;
+					@Override
+					public void onClick() {
+					}
+				};
+				orgManlink.setBody(Model.of( "Not defined"));
+				item.add(orgManlink);
+			}
 
 			final long techAdminId = box.getTechAdmin();
 
+			if (techAdminId != -1) { // database value was not null
 			Link<String> techManlink = new Link<String>("techAdmin") {
 				private static final long serialVersionUID = 1L;
 
@@ -230,7 +244,18 @@ public class DetailedNetworkStatusPage extends BasePage implements IHeaderContri
 			techManlink.setBody(Model.of(techAdmin.getFirstName() + " " + techAdmin.getName()));
 			techManlink.add(new AttributeAppender("style", "cursor: pointer;"));
 			item.add(techManlink);
-
+			}
+			else {
+				Link<String> techManlink = new Link<String>("techAdmin") {
+					private static final long serialVersionUID = 1L;
+					@Override
+					public void onClick() {
+					}
+				};
+				techManlink.setBody(Model.of( "Not defined"));
+				item.add(techManlink);
+			}
+			
 			
 			final int idx = index;
 			item.add(AttributeModifier.replace("class", new AbstractReadOnlyModel<String>() {
