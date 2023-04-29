@@ -111,7 +111,7 @@
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>9.4-1201-jdbc41</version>
+    <version>42.3.8</version>
 </dependency>
 
 		<dependency>
